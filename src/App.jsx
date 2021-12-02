@@ -15,6 +15,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Error404 from "./pages/Error404/Error404";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Registro from "./pages/Registro/Registro";
+import RecuperarPassword from "./pages/RecuperarPassword/RecurarPassword";
 
 
 function App() {
@@ -31,7 +33,9 @@ function App() {
         <Route path="/flota" element={<Flota/>}/>   
         <Route path="/clientes" element={<Clientes/>}/>   
         <Route path="/contacto" element={<Contacto/>}/>   
-        <Route path="/login" element={<Login/>}/>  
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/registro" element={<Registro/>}/>
+        <Route path="/recuperarpassword" element={<RecuperarPassword/>}/>
         <Route path="*" element={<Error404/>}/>        
       </Routes>
     </BrowserRouter>

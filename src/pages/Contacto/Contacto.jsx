@@ -5,7 +5,7 @@ const Contacto = () => {
         <>
             <div className="container-fluid mt-3">
                 <div className="row">
-                    <div className="col-md-6 col-sm-12 border border-0 border-end border-bottom border-2 ">
+                    <div className="col-md-6 col-sm-12 border border-0 border-end border-bottom border-4 ">
 
                         <h3 className="fw-bold text-center pb-1">Ingresa tus datos</h3>
                         <h5 className="fw-bold text-center pb-5">...Nosotros te contactamos</h5>
