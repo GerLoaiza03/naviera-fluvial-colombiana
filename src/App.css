@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+/*Paleta de colores*/
+
+.color1 {
+  background-color: #1d3557;
+}
+.color2 {
+  background-color: #457b9d;
+}
+.color3 {
+  background-color: #a8dadc;
+}
+.color4 {
+  background-color: #f1faee;
+}
+.color5 {
+  background-color: #e63946;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/*Estilos barra de navegación*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.texto {
   color: white;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+li a:hover {
+  background-color: #457b9d;
+  border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gradiente {
+  background-color: #e63946;
+  background: linear-gradient(
+    90deg,
+    rgba(230, 57, 70, 1) 0%,
+    rgba(29, 53, 87, 1) 54%
+  );
+}
+
+.active {
+  background-color: #457b9d;
+  border-radius: 4px;
+}
+
+/*Estilos página de inicio*/
+
+.parrafo__cobertura {
+  text-align: center;
+  background-color: #f59344;
+  margin-bottom: 30px;
+}
+
+.title1 {
+  position: relative;
+  margin-top: -57px;
+  font-size: 3rem;
+}
+
+.pad {
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+}
+
+main h1,
+main h2,
+main h3,
+main h6 {
+  text-align: center;
+  color: #cda448;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.carousel-section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0px;
+}
+.carousel-section #client {
+  overflow: hidden;
+  border-radius: 45px;
+}
+.carousel-section #client .carousel-indicators li {
+  border: 0;
+  background-color: #cda448;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+.carousel-section #client .carousel-indicators li.active {
+  background-color: #00091d;
+}
+.carousel-section #client .carousel-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  border-radius: 100%;
+}
+.carousel-section #client .carousel-arrow.prev {
+  left: 0.1rem;
+}
+.carousel-section #client .carousel-arrow.next {
+  right: 0.1rem;
+}
+.carousel-section .carru {
+  height: 350px;
+}
+
+/*Estilos del footer*/
+
+footer {
+  background: rgb(230, 57, 70);
+  background: linear-gradient(
+    90deg,
+    rgba(230, 57, 70, 1) 0%,
+    rgba(29, 53, 87, 1) 54%
+  );
+}
+footer .foot {
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+footer .creador {
+  text-align: end;
+  margin: 0;
+  padding-bottom: 0;
+  font-size: 0.9rem;
+}
+footer .title6 {
+  font-size: 0.9rem;
+}
+
+.parrafoclientes {
+  font-size: 9vw;
+  font-weight: bold;
+  color: #1d3557;
+}
+.parrafoclientes1 {
+  font-size: 9vw;
+  font-weight: bold;
+  color: #e63946;
+  z-index: 1;
+  position: absolute;
+  left: 20%;
+}
+.imagencliente {
+  position: relative;
+  z-index: 0;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #1d3557;
+}
+
+/*Estilos nombre empresas*/
+.nombre {
+  color: white;
+  font-size: 5vw;
+  font-family: 'Ephesis', cursive;
+  text-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+  font-weight: bold;
 }
