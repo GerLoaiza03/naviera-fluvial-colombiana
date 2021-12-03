@@ -1,6 +1,6 @@
 import Imagen4 from '../../components/Imagen/imagen4';
 import Logo from '../../components/Imagen/Logo';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -25,14 +25,16 @@ const Login = () => {
                                 <label htmlFor="password" className="form-label">Contraseña</label>
                                 <input type="password" className="form-control" name="password" id="password" />
                             </div>
+
+
                             <div className="d-grid gap-2 col-10 mx-auto">
-                                <button type="submit" className="btn btn-danger fw-bold p-2">Iniciar sesión</button>
+                                <NavLink to="/usuarioexterno" className="btn btn-danger fw-bold p-2" activeClassName="active"> Iniciar sesión</NavLink>
                             </div>
                         </form>
 
                         <div className="my-3 ms-5 fw-bold">
-                        <Link to="/recuperarpassword"> <a href="#/">¿Olvidaste tu contraseña?</a></Link>                       
-                            
+                            <Link to="/recuperarpassword"> <a href="#/">¿Olvidaste tu contraseña?</a></Link>
+
                         </div>
 
                         <div className="d-grid gap-2 col-7 mx-auto mt-4">

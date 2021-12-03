@@ -17,6 +17,9 @@ import Error404 from "./pages/Error404/Error404";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Registro from "./pages/Registro/Registro";
 import RecuperarPassword from "./pages/RecuperarPassword/RecurarPassword";
+import UsuarioExterno from "./pages/UsuarioExterno/UsuarioExterno";
+import HistorialCliente from "./pages/HistorialCliente/HistorialCliente";
+import RastreoEnvio from "./pages/RastreoEnvio/RastreoEnvio";
 
 
 function App() {
@@ -36,6 +39,9 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/registro" element={<Registro/>}/>
         <Route path="/recuperarpassword" element={<RecuperarPassword/>}/>
+        <Route path="/usuarioexterno" element={<UsuarioExterno/>}/>
+        <Route path="/historialcliente" element={<HistorialCliente/>}/>
+        <Route path="/rastreoenvio" element={<RastreoEnvio/>}/>        
         <Route path="*" element={<Error404/>}/>        
       </Routes>
     </BrowserRouter>
