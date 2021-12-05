@@ -4,14 +4,10 @@ import { NavLink } from 'react-router-dom';
 const NavbarVertical = () => {
     return (
         <>
-
             <div className="col color1 pt-3">
-
                 <ul className="nav flex-column ">
                     <li className="nav-item ">
-
                         <NavLink className="nav-link  text-white" to="/usuarioexterno" activeClassName="active" exact="true">Crear orden</NavLink>
-
                     </li>
                     <li className="nav-item">
 
@@ -21,10 +17,7 @@ const NavbarVertical = () => {
                         <NavLink className="nav-link  text-white" to="/rastreoenvio" activeClassName="active" exact="true">Rastrear envío</NavLink>
                     </li>
                 </ul>
-
             </div>
-
-
         </>
     );
 }

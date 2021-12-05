@@ -1,7 +1,12 @@
+import "./css/spur.css"
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './App.css';
+
+
+
+
 import Inicio from "./pages/inicio/Inicio";
 import QuienesSomos from "./pages/QuienesSomos/QuienesSomos";
 import PoliticaEmpresarial from "./pages/PoliticaEmpresarial/PoliticaEmpresarial";
@@ -20,7 +25,13 @@ import RecuperarPassword from "./pages/RecuperarPassword/RecurarPassword";
 import UsuarioExterno from "./pages/UsuarioExterno/UsuarioExterno";
 import HistorialCliente from "./pages/HistorialCliente/HistorialCliente";
 import RastreoEnvio from "./pages/RastreoEnvio/RastreoEnvio";
-
+import CrearPuerto from "./pages/CrearPuerto/CrearPuerto";
+import GestionPuerto from "./pages/GestionPuerto/GestionPuerto";
+import GestionUsuario from "./pages/GestionUsuario/GestionUsuario";
+import CrearUsuario from "./pages/CrearUsuario/CrearUsuario";
+import GestionOrden from "./pages/GestionOrden/GestionOrden";
+import ConsultarOrden from "./pages/ConsultarOrden/ConsultarOrden";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -42,6 +53,13 @@ function App() {
         <Route path="/usuarioexterno" element={<UsuarioExterno/>}/>
         <Route path="/historialcliente" element={<HistorialCliente/>}/>
         <Route path="/rastreoenvio" element={<RastreoEnvio/>}/>        
+        <Route path="/crearpuerto" element={<CrearPuerto/>}/>
+        <Route path="/gestionpuerto" element={<GestionPuerto/>}/>
+        <Route path="/gestionusuario" element={<GestionUsuario/>}/>
+        <Route path="/crearusuario" element={<CrearUsuario/>}/>
+        <Route path="/gestionorden" element={<GestionOrden/>}/>
+        <Route path="/consultarorden" element={<ConsultarOrden/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="*" element={<Error404/>}/>        
       </Routes>
     </BrowserRouter>
@@ -51,3 +69,4 @@ function App() {
 }
 
 export default App;
+
