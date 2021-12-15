@@ -41,17 +41,17 @@ const GestionOrden = () => {
                                         <td>Santa Marta - Colombia</td>
                                         <td>Wugan - China</td>
                                         <td>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
-                                                <label class="form-check-label" for="inlineRadio1">Pendiente</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
+                                                <label className="form-check-label" for="inlineRadio1">Pendiente</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                                                <label class="form-check-label" for="inlineRadio2">Aprobar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                                                <label className="form-check-label" for="inlineRadio2">Aprobar</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
-                                                <label class="form-check-label" for="inlineRadio2">Rechazar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
+                                                <label className="form-check-label" for="inlineRadio2">Rechazar</label>
                                             </div>
                                         </td>
                                     </tr>
@@ -62,17 +62,17 @@ const GestionOrden = () => {
                                         <td>Barranquilla - Colombia</td>
                                         <td>Singapur - Singapur</td>
                                         <td>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                                                <label class="form-check-label" for="inlineRadio1">Pendiente</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                                                <label className="form-check-label" for="inlineRadio1">Pendiente</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked/>
-                                                <label class="form-check-label" for="inlineRadio2">Aprobar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked/>
+                                                <label className="form-check-label" for="inlineRadio2">Aprobar</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
-                                                <label class="form-check-label" for="inlineRadio2">Rechazar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
+                                                <label className="form-check-label" for="inlineRadio2">Rechazar</label>
                                             </div>
                                         </td>
                                     </tr>
@@ -83,17 +83,17 @@ const GestionOrden = () => {
                                         <td>Buenaventura - Colombia</td>
                                         <td>Busan - Korea</td>
                                         <td>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
-                                                <label class="form-check-label" for="inlineRadio1">Pendiente</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
+                                                <label className="form-check-label" for="inlineRadio1">Pendiente</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                                                <label class="form-check-label" for="inlineRadio2">Aprobar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                                                <label className="form-check-label" for="inlineRadio2">Aprobar</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
-                                                <label class="form-check-label" for="inlineRadio2">Rechazar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
+                                                <label className="form-check-label" for="inlineRadio2">Rechazar</label>
                                             </div>
                                         </td>
                                     </tr>
@@ -104,17 +104,17 @@ const GestionOrden = () => {
                                         <td>Guajira - Colombia</td>
                                         <td>Rotterdam - Paises Bajos</td>
                                         <td>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
-                                                <label class="form-check-label" for="inlineRadio1">Pendiente</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
+                                                <label className="form-check-label" for="inlineRadio1">Pendiente</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                                                <label class="form-check-label" for="inlineRadio2">Aprobar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                                                <label className="form-check-label" for="inlineRadio2">Aprobar</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
-                                                <label class="form-check-label" for="inlineRadio2">Rechazar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
+                                                <label className="form-check-label" for="inlineRadio2">Rechazar</label>
                                             </div>
                                         </td>
                                     </tr>
@@ -125,17 +125,17 @@ const GestionOrden = () => {
                                         <td>Barranquilla - Colombia</td>
                                         <td>Amberes - Belgica</td>
                                         <td>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                                                <label class="form-check-label" for="inlineRadio1">Pendiente</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                                                <label className="form-check-label" for="inlineRadio1">Pendiente</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                                                <label class="form-check-label" for="inlineRadio2">Aprobar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                                                <label className="form-check-label" for="inlineRadio2">Aprobar</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
-                                                <label class="form-check-label" for="inlineRadio2">Rechazar</label>
+                                            <div className="form-check form-check-inline">
+                                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
+                                                <label className="form-check-label" for="inlineRadio2">Rechazar</label>
                                             </div>
                                         </td>
                                     </tr>

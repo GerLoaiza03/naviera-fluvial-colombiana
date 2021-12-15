@@ -41,9 +41,9 @@ const GestionPuerto = () => {
                                         <td>$2.121.231</td>
                                         <td>-//-</td>
                                         <td>
-                                                <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                                <label class="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
+                                                <div className="form-check form-switch">
+                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
+                                                <label className="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
                                                 </div>        
                                         </td>
                                     </tr>
@@ -54,9 +54,9 @@ const GestionPuerto = () => {
                                         <td>$3.000.000</td>
                                         <td>En mantenimiento</td>
                                         <td>
-                                                <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" unchecked />
-                                                <label class="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
+                                                <div className="form-check form-switch">
+                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" unchecked />
+                                                <label className="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
                                                 </div>          
                                         </td>
                                     </tr>
@@ -67,9 +67,9 @@ const GestionPuerto = () => {
                                         <td>$2.500.000</td>
                                         <td>-//-</td>
                                         <td>
-                                                <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                                <label class="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
+                                                <div className="form-check form-switch">
+                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
+                                                <label className="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
                                                 </div>         
                                         </td>
                                     </tr>
@@ -80,9 +80,9 @@ const GestionPuerto = () => {
                                         <td>$5.000.000</td>
                                         <td>Cerrado</td>
                                         <td>
-                                                <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" unchecked />
-                                                <label class="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
+                                                <div className="form-check form-switch">
+                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" unchecked />
+                                                <label className="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
                                                 </div>          
                                         </td>
                                     </tr>
@@ -93,9 +93,9 @@ const GestionPuerto = () => {
                                         <td>$4.500.000</td>
                                         <td>-//-</td>
                                         <td>
-                                                <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                                <label class="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
+                                                <div className="form-check form-switch">
+                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
+                                                <label className="form-check-label" for="flexSwitchCheckChecked">Estado Puerto</label>
                                                 </div>         
                                         </td>
                                     </tr>

@@ -78,13 +78,13 @@ const CrearUsuario = () => {
                                 <div className="row">
                                     <div className="col gap-2 flex-column d-flex ">
                                             <div className="mb-1 text-white">x</div>
-                                            <button type="" class="btn color5 fw-bold text-white">
+                                            <button type="" className="btn color5 fw-bold text-white">
                                                 Cancelar
                                             </button>
                                         </div>
                                         <div className="col gap-2 flex-column d-flex ">
                                             <div className="mb-1 text-white">x</div>
-                                            <button type="" class="btn btn-success fw-bold text-white">
+                                            <button type="" className="btn btn-success fw-bold text-white">
                                                 Guardar
                                         </button>
                                     </div>
