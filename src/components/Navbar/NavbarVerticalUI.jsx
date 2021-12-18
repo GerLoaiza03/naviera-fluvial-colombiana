@@ -35,7 +35,16 @@ const NavbarVerticalUI = () => {
                             <li><NavLink className="dropdown-item" to="/gestionorden" activeClassName="active" exact="true">Gestionar Ordenes</NavLink></li>
                             <li><NavLink className="dropdown-item" to="/consultarorden" activeClassName="active" exact="true" >Consultar Ordenes</NavLink></li>
                         </ul>
-                    </li>                    
+                    </li>    
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="drowt" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color:'white'}}>
+                            Modulo de Barcos
+                        </a>
+                        <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><NavLink className="dropdown-item" to="/crearbarco" activeClassName="active" exact="true">Crear Barcos</NavLink></li>
+                            <li><NavLink className="dropdown-item" to="/gestionbarco" activeClassName="active" exact="true">Habilitar/Inhabilitar Barcos</NavLink></li>
+                        </ul>
+                    </li>                
                 </ul>
             </div>
         </>

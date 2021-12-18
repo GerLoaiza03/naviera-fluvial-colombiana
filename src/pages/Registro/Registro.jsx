@@ -1,7 +1,7 @@
 import React from 'react';
 import Imagen4 from '../../components/Imagen/imagen4';
 import Logo from '../../components/Imagen/Logo';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {useState} from 'react';
 import validator from 'validator';
 import swal from "sweetalert";

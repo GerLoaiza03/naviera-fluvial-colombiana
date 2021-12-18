@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarVertical from '../../components/Navbar/NavbarVertical';
 import Imagen2 from '../../components/Imagen/image2';
-import { Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 import {useState} from 'react';
 import validator from 'validator';

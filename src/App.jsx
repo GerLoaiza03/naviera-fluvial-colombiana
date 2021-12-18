@@ -32,6 +32,8 @@ import CrearUsuario from "./pages/CrearUsuario/CrearUsuario";
 import GestionOrden from "./pages/GestionOrden/GestionOrden";
 import ConsultarOrden from "./pages/ConsultarOrden/ConsultarOrden";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import CrearBarco from "./pages/CrearBarco/CrearBarco";
+import GestionBarco from "./pages/GestionBarco/GestionBarco";
 
 function App() {
   return (
@@ -60,6 +62,8 @@ function App() {
         <Route path="/gestionorden" element={<GestionOrden/>}/>
         <Route path="/consultarorden" element={<ConsultarOrden/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/crearbarco" element={<CrearBarco/>}/>
+        <Route path="/gestionbarco" element={<GestionBarco/>}/>
         <Route path="*" element={<Error404/>}/>        
       </Routes>
     </BrowserRouter>
