@@ -3,16 +3,42 @@ import NavbarVertical from '../../components/Navbar/NavbarVertical';
 import {useState} from 'react';
 import validator from 'validator';
 import swal from "sweetalert";
+import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 
 
 const UsuarioExterno = () => {
 
+    const [ puertoorigen, setPuertoOrigen] = useState("");
+    const [ puertodestino, setPuertoDestino] = useState("");
+    const [ date, setDate ] = useState("");
+    const [ contenedores, setContenedores ] = useState("");
+    const [ peso, setPeso ] = useState("");
+    const [ declarado, setDeclarado ] = useState("");
+    const [ valorapagar, setValoraPagar] = useState("");
+    const [ tiporemitente, setTipoRemitente] = useState("");
+    const [ documentoremitente, setDocumentoRemitente] = useState("");
+    const [ telefonoremitente, setTelefonoRemitente] = useState("");
+    const [ nombreremitente, setNombreRemitente] = useState("");
+    const [ apellidosremitente, setApellidosRemitente] = useState("");
+    const [ emailremitente, setEmailRemitente] = useState("");
+    const [ direccionremitente, setDireccionRemitente] = useState("");
+    const [ tipodestinatario, setTipoDestinatario] = useState("");
+    const [ documentodestinatario, setDocumentoDestinatario] = useState("");
+    const [ telefonodestinatario, setTelefonoDestinatario] = useState("");
+    const [ nombredestinatario, setNombreDestinatario] = useState("");
+    const [ apellidosdestinatario, setApellidosDestinatario] = useState("");
+    const [ emaildestinatario, setEmailDestinatario] = useState("");
+    const [ direcciondestinatario, setDireccionDestinatario] = useState("");
+
+
+
     //Creación de estados
     const [values, setValues] = useState({puertoorigen:"", puertodestino:"", date:"", contenedores:"",peso:"", declarado:"", tiporemitente:"", documentoremitente:"", telefonoremitente:"", nombreremitente:"", apellidosremitente:"", emailremitente:"", direccionremitente:"", tipodestinatario:"", documentodestinatario:"", telefonodestinatario:"", nombredestinatario:"", apellidosdestinatario:"", emaildestinatario:"", direcciondestinatario:""});
     const [error, setError] = useState({puertoorigen:"", puertodestino:"", date:"", contenedores:"",peso:"", declarado:"", tiporemitente:"", documentoremitente:"", telefonoremitente:"", nombreremitente:"", apellidosremitente:"", emailremitente:"", direccionremitente:"", tipodestinatario:"", documentodestinatario:"", telefonodestinatario:"", nombredestinatario:"", apellidosdestinatario:"", emaildestinatario:"", direcciondestinatario:""})//Objeto para manejo errores
 
-    const onChngeHandler = (e) => {//Identifica dinamicamente id del campo y actualiza estado
+    const onChangeHandler = (e) => {//Identifica dinamicamente id del campo y actualiza estado
         setValues({
             ...values,
             [e.target.id]: e.target.value
@@ -169,7 +195,58 @@ const UsuarioExterno = () => {
     }
 
     const onSubmitHandler = (e) => {
-        e.preventDefault();        
+        e.preventDefault();
+        axios.post("http://localhost:5000/api/naviera/crear_orden", {
+                puertoorigen,
+                puertodestino,
+                date,
+                contenedores,
+                peso,
+                declarado,
+                valorapagar,
+                tiporemitente,
+                documentoremitente,
+                telefonoremitente,
+                nombreremitente,
+                apellidosremitente,
+                emailremitente,
+                direccionremitente,
+                tipodestinatario,
+                documentodestinatario,
+                telefonodestinatario,
+                nombredestinatario,
+                apellidosdestinatario,
+                emaildestinatario,
+                direcciondestinatario,
+            }).then((response) => {
+                console.log(response)
+                swal("Datos almacenados exitosamente", `Id: ${response.data._id}` ,"success");
+                setApellidosDestinatario("");
+                setApellidosRemitente("");
+                setContenedores("");
+                setDate("");
+                setDeclarado("");
+                setDireccionDestinatario("");
+                setDireccionRemitente("");
+                setDocumentoDestinatario("");
+                setDocumentoRemitente("");
+                setEmailDestinatario("");
+                setEmailRemitente("");
+                setNombreDestinatario("");
+                setNombreRemitente("");
+                setPeso("");
+                setPuertoDestino("");
+                setPuertoOrigen("");
+                setTelefonoDestinatario("");
+                setTelefonoRemitente("");
+                setTipoDestinatario("");
+                setTipoRemitente("");
+                setValoraPagar(""); 
+                
+            }).catch((error) => {
+                console.log(error)
+                swal("Registro no Almacenado", "" ,"error");
+            });
         if(values.puertoorigen==="" || values.puertodestino==="" || values.date==="" || values.contenedores==="" || values.peso==="" || values.declarado==="" || values.tiporemitente==="" || values.documentoremitente==="" || values.telefonoremitente==="" || values.nombreremitente==="" || values.apellidosremitente==="" || values.emailremitente==="" || values.direccionremitente==="" || values.tipodestinatario==="" || values.documentodestinatario==="" || values.telefonodestinatario==="" || values.nombredestinatario==="" || values.apellidosdestinatario==="" || values.emaildestinatario==="" || values.direcciondestinatario===""){//Evita que se vayan campos vacios
             if (values.puertoorigen===""){
                 setError((error)=>{return {...error, puertoorigen:"Este campo es obligatorio"}});
@@ -231,11 +308,13 @@ const UsuarioExterno = () => {
             if (values.direcciondestinatario===""){
                 setError((error)=>{return {...error, direcciondestinatario:"Este campo es obligatorio"}});
             }
-        }else if(!error.puertoorigen && !error.puertodestino && !error.date && !error.contenedores && !error.peso && !error.declarado && !error.tiporemitente && !error.documentoremitente && !error.telefonoremitente && !error.nombreremitente && !error.apellidosremitente && !error.emailremitente && !error.direccionremitente && !error.tipodestinatario && !error.documentodestinatario && !error.telefonodestinatario && !error.nombredestinatario && !error.apellidosdestinatario && !error.emaildestinatario && !error.direcciondestinatario){//Verifica que no haya errores
+        }else if(!error.puertoorigen && !error.puertodestino && !error.date && !error.contenedores && !error.peso && !error.declarado && !error.tiporemitente && !error.documentoremitente && !error.telefonoremitente && !error.nombreremitente && !error.apellidosremitente && !error.emailremitente && !error.direccionremitente && !error.tipodestinatario && !error.documentodestinatario && !error.telefonodestinatario && !error.nombredestinatario && !error.apellidosdestinatario && !error.emaildestinatario && !error.direcciondestinatario){//Verifica que no haya errores    
             setValues({puertoorigen: "", puertodestino:"", date: "", contenedores:"", peso: "", declarado:"", tiporemitente: "", documentoremitente:"", telefonoremitente: "", nombreremitente: "", apellidosremitente:"", emailremitente: "", direccionremitente:"", tipodestinatario: "", documentodestinatario:"", telefonodestinatario: "", nombredestinatario:"", apellidosdestinatario: "", emaildestinatario:"", direcciondestinatario: ""});//Limpia los valores de los campos
-            swal("Datos almacenados exitosamente","","success");
         }
-    }
+        
+            
+        
+    };
 
     return (
         <>
@@ -248,7 +327,7 @@ const UsuarioExterno = () => {
                     <div className="col-8">
                     <h5 className="fw-bold text-center pt-2 pb-3">Crea tu orden de envío </h5>
                         <h6 className="fw-bold text-start pt-2 pb-3">I. Datos de la carga </h6>
-                        <form className="ms-5 me-5" onSubmit={onSubmitHandler}  noValidate>
+                        <form className="ms-5 me-5" onSubmit={onSubmitHandler} >
                             <div className="mb-3">
 
                                 <div className="row">
@@ -258,8 +337,10 @@ const UsuarioExterno = () => {
                                         <select 
                                         className={error.puertoorigen ? "form-select is-invalid" :"form-select"} 
                                         id="puertoorigen"
-                                        value={values.puertoorigen}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={puertoorigen}
+                                        onChange={(e) => setPuertoOrigen(e.target.value)
+                                        }
                                         >
                                             <option className="fw-bold" value="" >Seleccione</option>
                                             <option value="1">Barranquilla</option>
@@ -278,8 +359,9 @@ const UsuarioExterno = () => {
                                         <select 
                                         className={error.puertodestino ? "form-control is-invalid" :"form-control"}
                                         id="puertodestino"
-                                        value={values.puertodestino}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={puertodestino}
+                                        onChange={(e) => setPuertoDestino(e.target.value)}
                                         >
                                             <option className="fw-bold" value="" >Seleccione</option>
                                             <option value="1">Barranquilla</option>
@@ -299,8 +381,9 @@ const UsuarioExterno = () => {
                                         type="date" 
                                         className={error.date ? "form-control is-invalid" :"form-control"} 
                                         id="date" 
-                                        value={values.date}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={date}
+                                        onChange={(e) => setDate(e.target.value)}
                                         />
                                         <div className="text-danger">{error.date}</div>
                                     </div>
@@ -313,8 +396,9 @@ const UsuarioExterno = () => {
                                         type="text" 
                                         className={error.contenedores ? "form-control is-invalid" :"form-control"}
                                         id="contenedores" 
-                                        value={values.contenedores}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={contenedores}
+                                        onChange={(e) => setContenedores(e.target.value)}
                                         />
                                         <div className="text-danger">{error.contenedores}</div>
                                     </div>
@@ -324,8 +408,9 @@ const UsuarioExterno = () => {
                                         type="text" 
                                         className={error.peso ? "form-control is-invalid" :"form-control"}
                                         id="peso" 
-                                        value={values.peso}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={peso}
+                                        onChange={(e) => setPeso(e.target.value)}
                                         />
                                         <div className="text-danger">{error.peso}</div>
                                     </div>
@@ -335,8 +420,9 @@ const UsuarioExterno = () => {
                                         type="text" 
                                         className={error.declarado ? "form-control is-invalid" :"form-control"}
                                         id="declarado" 
-                                        value={values.declarado}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={declarado}
+                                        onChange={(e) => setDeclarado(e.target.value)}
                                         />
                                         <div className="text-danger">{error.declarado}</div>
                                     </div>
@@ -351,8 +437,16 @@ const UsuarioExterno = () => {
                                     </div>
 
                                     <div className="col">
-                                        <label htmlFor="importe" className="form-label">Valor a pagar</label>
-                                        <input type="text" className="form-control" name="importe" id="importe" disabled />
+                                        <label htmlFor="valorapagar" className="form-label">Valor a pagar</label>
+                                        <input 
+                                        type="text" 
+                                        className="form-control" 
+                                        name="valorapagar" 
+                                        id="valorapagar" 
+                                        disabled 
+                                        value={valorapagar}
+                                        onChange={(e) => setValoraPagar(e.target.value)}
+                                        />
                                     </div>
                                     <div className="col">
                                     </div>
@@ -371,8 +465,9 @@ const UsuarioExterno = () => {
                                         <select 
                                         className={error.tiporemitente ? "form-control is-invalid" :"form-control"}
                                         id="tiporemitente"
-                                        value={values.tiporemitente}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={tiporemitente}
+                                        onChange={(e) => setTipoRemitente(e.target.value)}
                                         >
                                             <option className="fw-bold" value="" >Seleccione</option>
                                             <option value="1">Cédula de ciudadanía</option>
@@ -389,8 +484,9 @@ const UsuarioExterno = () => {
                                         type="text" 
                                         className={error.documentoremitente ? "form-control is-invalid" :"form-control"}  
                                         id="documentoremitente" 
-                                        value={values.documentoremitente}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={documentoremitente}
+                                        onChange={(e) => setDocumentoRemitente(e.target.value)}
                                         />
                                         <div className="text-danger">{error.documentoremitente}</div>
                                     </div>
@@ -400,8 +496,9 @@ const UsuarioExterno = () => {
                                         type="text" 
                                         className={error.telefonoremitente ? "form-control is-invalid" :"form-control"}
                                         id="telefonoremitente" 
-                                        value={values.telefonoremitente}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={telefonoremitente}
+                                        onChange={(e) => setTelefonoRemitente(e.target.value)}
                                         />
                                         <div className="text-danger">{error.telefonoremitente}</div>
                                     </div>
@@ -414,8 +511,9 @@ const UsuarioExterno = () => {
                                     type="text" 
                                     className={error.nombreremitente ? "form-control is-invalid" :"form-control"}
                                     id="nombreremitente" 
-                                    value={values.nombreremitente}
-                                    onChange={onChngeHandler}
+                                    required
+                                    value={nombreremitente}
+                                    onChange={(e) => setNombreRemitente(e.target.value)}
                                     />
                                     <div className="text-danger">{error.nombreremitente}</div>
                                     </div>
@@ -425,8 +523,9 @@ const UsuarioExterno = () => {
                                         type="text" 
                                         className={error.apellidosremitente ? "form-control is-invalid" :"form-control"}
                                         id="apellidosremitente" 
-                                        value={values.apellidosremitente}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={apellidosremitente}
+                                        onChange={(e) => setApellidosRemitente(e.target.value)}
                                         />
                                         <div className="text-danger">{error.apellidosremitente}</div>
                                     </div>
@@ -436,8 +535,9 @@ const UsuarioExterno = () => {
                                         type="email" 
                                         className={error.emailremitente ? "form-control is-invalid" :"form-control"} 
                                         id="emailremitente" 
-                                        value={values.emailremitente}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={emailremitente}
+                                        onChange={(e) => setEmailRemitente(e.target.value)}
                                         />
                                         <div className="text-danger">{error.emailremitente}</div>
                                     </div>
@@ -449,9 +549,10 @@ const UsuarioExterno = () => {
                                     <input 
                                     type="text" 
                                     className={error.direccionremitente ? "form-control is-invalid" :"form-control"} 
-                                    id="direccionremitente" 
-                                    value={values.direccionremitente}
-                                    onChange={onChngeHandler}
+                                    id="direccionremitente"
+                                    required 
+                                    value={direccionremitente}
+                                    onChange={(e) => setDireccionRemitente(e.target.value)}
                                     />
                                     <div className="text-danger">{error.direccionremitente}</div>
                                     </div>
@@ -476,8 +577,9 @@ const UsuarioExterno = () => {
                                         <select 
                                         className={error.tipodestinatario ? "form-control is-invalid" :"form-control"}
                                         id="tipodestinatario"
-                                        value={values.tipodestinatario}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={tipodestinatario}
+                                        onChange={(e) => setTipoDestinatario(e.target.value)}
                                         >
                                             <option className="fw-bold" value="" >Seleccione</option>
                                             <option value="1">Cédula de ciudadanía</option>
@@ -494,8 +596,9 @@ const UsuarioExterno = () => {
                                         type="text" 
                                         className={error.documentodestinatario ? "form-control is-invalid" :"form-control"}
                                         id="documentodestinatario"
-                                        value={values.documentodestinatario}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={documentodestinatario}
+                                        onChange={(e) => setDocumentoDestinatario(e.target.value)}
                                         />
                                         <div className="text-danger">{error.documentodestinatario}</div>
                                     </div>
@@ -505,8 +608,9 @@ const UsuarioExterno = () => {
                                         type="text" 
                                         className={error.telefonodestinatario ? "form-control is-invalid" :"form-control"}
                                         id="telefonodestinatario" 
-                                        value={values.telefonodestinatario}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={telefonodestinatario}
+                                        onChange={(e) => setTelefonoDestinatario(e.target.value)}
                                         />
                                         <div className="text-danger">{error.telefonodestinatario}</div>
                                     </div>
@@ -519,8 +623,9 @@ const UsuarioExterno = () => {
                                     type="text" 
                                     className={error.nombredestinatario ? "form-control is-invalid" :"form-control"}
                                     id="nombredestinatario" 
-                                    value={values.nombredestinatario}
-                                    onChange={onChngeHandler}
+                                    required
+                                    value={nombredestinatario}
+                                    onChange={(e) => setNombreDestinatario(e.target.value)}
                                     />
                                     <div className="text-danger">{error.nombredestinatario}</div>
                                     </div>
@@ -530,8 +635,9 @@ const UsuarioExterno = () => {
                                         type="text" 
                                         className={error.apellidosdestinatario ? "form-control is-invalid" :"form-control"}
                                         id="apellidosdestinatario" 
-                                        value={values.apellidosdestinatario}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={apellidosdestinatario}
+                                        onChange={(e) => setApellidosDestinatario(e.target.value)}
                                         />
                                         <div className="text-danger">{error.apellidosdestinatario}</div>
                                     </div>
@@ -541,8 +647,9 @@ const UsuarioExterno = () => {
                                         type="email" 
                                         className={error.emaildestinatario ? "form-control is-invalid" :"form-control"} 
                                         id="emaildestinatario" 
-                                        value={values.emaildestinatario}
-                                        onChange={onChngeHandler}
+                                        required
+                                        value={emaildestinatario}
+                                        onChange={(e) => setEmailDestinatario(e.target.value)}
                                         />
                                         <div className="text-danger">{error.emaildestinatario}</div>
                                     </div>
@@ -555,8 +662,10 @@ const UsuarioExterno = () => {
                                     type="text" 
                                     className={error.direcciondestinatario ? "form-control is-invalid" :"form-control"}
                                     id="direcciondestinatario" 
-                                    value={values.direcciondestinatario}
-                                    onChange={onChngeHandler}
+                                    required
+                                    value={direcciondestinatario}
+                                    // onChange={onChangeHandler}
+                                    onChange={(e) => setDireccionDestinatario(e.target.value)}
                                     />
                                     <div className="text-danger">{error.direcciondestinatario}</div>
                                     </div>
@@ -565,12 +674,20 @@ const UsuarioExterno = () => {
                                         <button type="submit" className="btn color5 fw-bold text-white">
                                             Guardar
                                         </button>
+                                    
                                     </div>
                                     <div className="col gap-2 flex-column d-flex ">
                                         <div className="mb-1 text-white">x</div>
+                                    <NavLink
+                                        to='/factura'
+                                        activeClassName='active'
+                                        exact='true'> 
                                         <button type="" className="btn btn-success fw-bold text-white">
                                             Boton de pago
                                         </button>
+                                    </NavLink>
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>

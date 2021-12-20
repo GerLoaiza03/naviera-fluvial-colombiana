@@ -5,7 +5,7 @@ import Imagen2 from '../../components/Imagen/image2';
 import NavbarVertical from '../../components/Navbar/NavbarVertical';
 import TableOrdenes from '../../components/TableOrdenes/TableOrdenes';
 import axios from 'axios';
-import SearchBar from '../../components/SearchBar/SearchBar';
+// import SearchBar from '../../components/SearchBar/SearchBar';
 
 // import swal from 'sweetalert';
 const HistorialCliente = () => {

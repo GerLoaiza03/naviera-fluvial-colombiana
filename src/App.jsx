@@ -31,6 +31,7 @@ import ConsultarOrden from './pages/ConsultarOrden/ConsultarOrden';
 import Dashboard from './pages/Dashboard/Dashboard';
 import CrearBarco from './pages/CrearBarco/CrearBarco';
 import GestionBarco from './pages/GestionBarco/GestionBarco';
+import Factura from './pages/Factura/Factura';
 
 function App() {
 	return (
@@ -65,6 +66,8 @@ function App() {
 					<Route path='/dashboard' element={<Dashboard />} />
 					<Route path='/crearbarco' element={<CrearBarco />} />
 					<Route path='/gestionbarco' element={<GestionBarco />} />
+					<Route path='/factura' element={<Factura />} />
+					
 					<Route path='*' element={<Error404 />} />
 				</Routes>
 			</BrowserRouter>
