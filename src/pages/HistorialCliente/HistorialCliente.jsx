@@ -16,18 +16,17 @@ const HistorialCliente = () => {
 	// const [estado, setEstado] = useState('');
 
 	const [prueba, setPrueba] = useState([]);
-
 	const mostrarOrdenes = () => {
 		axios
 			.get('http://localhost:5000/api/naviera/obtener_envios')
 			.then((response) => {
 				setPrueba(response.data);
+				console.log(response.data);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
 	};
-
 	const varglobal = prueba;
 	useEffect(() => {
 		mostrarOrdenes();
@@ -112,19 +111,11 @@ const HistorialCliente = () => {
 		axios
 			.get('http://localhost:5000/api/naviera/obtener_envios')
 			.then((response) => {
-				console.log('respnose');
-				console.log(response);
 				setResputaApi(response.data);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
-
-		// respuestaApi.map((component) => {
-		// 	setIsItIn(component.find(=>{
-
-		// 	}))
-		// });
 	};
 	return (
 		<>
