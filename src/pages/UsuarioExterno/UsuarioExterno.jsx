@@ -9,6 +9,18 @@ import { NavLink } from 'react-router-dom';
 
 
 const UsuarioExterno = () => {
+    const sumar = (e) =>{
+        e.preventDefault();
+        var numero1 = document.getElementById("numero1").value;
+        console.log("numero1")
+        var valorMilla = 5000;
+
+        var suma = numero1 * valorMilla;
+
+        document.writeln(suma);
+    }
+
+
 
     const [ puertoorigen, setPuertoOrigen] = useState("");
     const [ puertodestino, setPuertoDestino] = useState("");
@@ -32,8 +44,8 @@ const UsuarioExterno = () => {
     const [ emaildestinatario, setEmailDestinatario] = useState("");
     const [ direcciondestinatario, setDireccionDestinatario] = useState("");
 
-
-
+    //suma onclick
+    
     //Creación de estados
     const [values, setValues] = useState({puertoorigen:"", puertodestino:"", date:"", contenedores:"",peso:"", declarado:"", tiporemitente:"", documentoremitente:"", telefonoremitente:"", nombreremitente:"", apellidosremitente:"", emailremitente:"", direccionremitente:"", tipodestinatario:"", documentodestinatario:"", telefonodestinatario:"", nombredestinatario:"", apellidosdestinatario:"", emaildestinatario:"", direcciondestinatario:""});
     const [error, setError] = useState({puertoorigen:"", puertodestino:"", date:"", contenedores:"",peso:"", declarado:"", tiporemitente:"", documentoremitente:"", telefonoremitente:"", nombreremitente:"", apellidosremitente:"", emailremitente:"", direccionremitente:"", tipodestinatario:"", documentodestinatario:"", telefonodestinatario:"", nombredestinatario:"", apellidosdestinatario:"", emaildestinatario:"", direcciondestinatario:""})//Objeto para manejo errores
@@ -403,7 +415,7 @@ const UsuarioExterno = () => {
                                         <div className="text-danger">{error.contenedores}</div>
                                     </div>
                                     <div className="col">
-                                        <label htmlFor="peso" className="form-label">Peso total carga </label>
+                                        <label htmlFor="peso" className="form-label">Peso de Carga </label>
                                         <input 
                                         type="text" 
                                         className={error.peso ? "form-control is-invalid" :"form-control"}
@@ -415,7 +427,7 @@ const UsuarioExterno = () => {
                                         <div className="text-danger">{error.peso}</div>
                                     </div>
                                     <div className="col">
-                                        <label htmlFor="declarado" className="form-label">Valor declarado</label>
+                                        <label htmlFor="declarado" id="numero1" className="form-label">Distancia en Millas</label>
                                         <input 
                                         type="text" 
                                         className={error.declarado ? "form-control is-invalid" :"form-control"}
@@ -431,7 +443,8 @@ const UsuarioExterno = () => {
                                 <div className="row">
                                     <div className="col gap-2 flex-column d-flex ">
                                         <div className="mb-1 text-white">x</div>
-                                        <button type="" className="btn color5 fw-bold text-white">
+                                     
+                                        <button onclick="sumar" type="" className="btn color5 fw-bold text-white">
                                             Liquidar importe
                                         </button>
                                     </div>
